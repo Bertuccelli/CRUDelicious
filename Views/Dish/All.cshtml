@@ -1,0 +1,20 @@
+@model List<Dish>
+<h1>Come view our Recipes!</h1>
+
+<a href="/dishes/new">Create a new dish</a>
+
+@foreach (Dish dish in Model)
+{
+    <div class="card shadow rounded mx-auto w-75 mb-3">
+        <h4 class="card-title text-center bg-dark text-light py-2 rounded-top">
+            @dish.Name
+        </h4>
+
+        <div class="card-body">
+            <p class="card-text">@dish.Description</p>
+        </div>
+        <small class="text-muted">Submitted on: @dish.CreatedAt </small>
+        <a asp-controller="Dish" asp-action="ViewDish" asp-route-dishId=@dish.DishId>View Details</a>
+
+    </div>
+}

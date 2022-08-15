@@ -1,0 +1,30 @@
+@model Dish
+
+<div>
+    <h1>Welcome to our Online Cookbook!</h1>
+    <form asp-action="UpdateDish" asp-controller="Dish" asp-route-updatedDishId="@Model.DishId">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" value="@Model.Name">
+
+        <label asp-for="Chef"></label>
+        <input asp-for="Chef" value="@Model.Chef">
+
+        <label asp-for="Calories"></label>
+        <input asp-for="Calories" value="@Model.Calories">
+
+        <label asp-for="Tastiness"></label>
+        <select asp-for="Tastiness" value=@Model.Tastiness>
+            <option default selected>please rate your dish</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label asp-for="Description"></label>
+        <input asp-for="Description" value="@Model.Description">
+
+        <button type="submit">Edit Dish</button>
+    </form>
+</div>
